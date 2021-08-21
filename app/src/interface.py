@@ -20,16 +20,19 @@ def home_page():
 # after hitting the search button
 @app.route("/search", methods=["POST", "GET"])
 def search():
+    query = None
     if request.method == "POST":
         query = request.form.get("search_query")
     if query is None:
         code = 400
-        r = {"message": "Required parameter: query"}
+        r = {
+            "message": "Required parameter(query): please enter a valid string to search"
+        }
     else:
         code = 200
         perfom = find.perfom_search()
         r = perfom.search(query)
-    return {"status_code": code, "results": r}
+    return {"results": r}
 
 
 # ping the service
@@ -47,6 +50,7 @@ def ping(url):
 
 
 # health check...later implement CI/CD
+# Do proper health check using docker and kubernetes
 @app.route("/health")
 def check_health():
 
@@ -58,7 +62,7 @@ def check_health():
             "www.googleapis.com/books/v1/volumes?filter=full&maxResults=5&printType=BOOKS&q=Flowers"
         ),
     }
-    return {"status_code": 200, "results": r}
+    return {"results": r}
 
 
 if __name__ == "__main__":
