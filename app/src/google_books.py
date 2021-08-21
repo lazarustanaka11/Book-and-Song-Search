@@ -3,6 +3,7 @@ import time
 from datatypes import result, books_results
 
 
+
 class Google(object):
     def __init__(self):
         self.init_calls = init_request.initiate_calls()
@@ -31,6 +32,7 @@ class Google(object):
         """
         if len(results) > 0:
             for x in range(len(results)):
+
                 each_item = results[x]
                 each_item_kind = each_item["kind"]
                 volume_info = each_item["volumeInfo"]

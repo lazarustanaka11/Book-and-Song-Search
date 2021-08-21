@@ -28,6 +28,7 @@ def search():
         r = {
             "message": "Required parameter(query): please enter a valid string to search"
         }
+
     else:
         code = 200
         perfom = find.perfom_search()
@@ -51,6 +52,7 @@ def ping(url):
 
 # health check...later implement CI/CD
 # Do proper health check using docker and kubernetes
+
 @app.route("/health")
 def check_health():
 

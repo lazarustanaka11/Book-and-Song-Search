@@ -2,6 +2,7 @@ import init_request
 from datatypes import result, itunes_results
 
 
+
 class Itunes(object):
     def __init__(self):
         super().__init__()
