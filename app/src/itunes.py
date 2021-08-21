@@ -1,4 +1,5 @@
 import init_request
+from datatypes import result, itunes_results
 
 
 class Itunes(object):
@@ -31,6 +32,7 @@ class Itunes(object):
         if len(results) > 0:
 
             for each_item in results:
+                title = None
                 each_item_kind = (
                     each_item["kind"]
                     if "kind" in each_item
@@ -40,9 +42,9 @@ class Itunes(object):
                 if "trackName" in each_item:
                     title = each_item["trackName"]
                 else:
-                    # IF THERE IS NO TITLE, APPEND 3 *S AND EXPLAIN IN DOCUMENTATION
-                    title = "***"
+                    # IF THERE IS NO TITLE, APPEND A * AND EXPLAIN IN DOCUMENTATION
+                    title = "*"
                     title += each_item["collectionName"]
                 items.append({"type": each_item_kind, "artist": artist, "title": title})
         # return the results list, status code of call and the time lapse
-        return items, song_result_status, song_time_lapse
+        return itunes_results(result(items, song_result_status, song_time_lapse))
