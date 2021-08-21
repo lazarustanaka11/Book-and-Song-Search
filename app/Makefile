@@ -17,3 +17,6 @@ ammend_commit:
 	git add -u
 	git commit --amend --no-edit
 	git push -f
+
+run:
+	python src/interface.py

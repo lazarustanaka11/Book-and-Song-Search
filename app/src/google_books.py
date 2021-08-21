@@ -1,5 +1,6 @@
 import init_request
 import time
+from datatypes import result, books_results
 
 
 class Google(object):
@@ -30,8 +31,7 @@ class Google(object):
         """
         if len(results) > 0:
             for x in range(len(results)):
-                with open("examine.json", "w") as js:
-                    js.write(str(results))
+
                 each_item = results[x]
                 each_item_kind = each_item["kind"]
                 volume_info = each_item["volumeInfo"]
@@ -44,4 +44,4 @@ class Google(object):
                 )  # no title return empty list
                 items.append({"type": each_item_kind, "author": author, "title": title})
         # return the results list, status code of call and the time lapse
-        return items, book_result_status, book_time_lapse
+        return books_results(result(items, book_result_status, book_time_lapse))
