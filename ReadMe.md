@@ -1,13 +1,16 @@
 # SONG/BOOK SEARCH SERVICE
 
-## INSTALLATION
+## INSTALLATION and EASY run
+- clone repository
+- in directory Book-and-Song-Search/app
 - run ```make install```
+- run ```make run```
 
 ## REQUIREMENTS
 - If user has docker installed and the docker engine up and running, then skip to [Run-with-docker](#Run-with-docker)
 - If not already installed, please install the following packages
 
-    - pip intstall flask
+    - pip install flask
     - pip install requests
 
 ## How to run
@@ -38,7 +41,7 @@
 
       2. If this is the case, replace, 127.0.0.1 with your IP address and 5000 with your port number.
         - TIP : just run the app after making changes in 1 above, and the proper address to reach and make a query should be shown on the terminal, as shown below :
-         - ![correct_address](app/demo/IP.png)
+         - ![correct_address]
 ## Structure of results
  **1. Successfull call**
   - The flask api returns results that provide the status code, and then the results body.
