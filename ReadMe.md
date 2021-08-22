@@ -2,6 +2,9 @@
 
 ## INSTALLATION and EASY run
 - clone repository
+- create and activate virtual env using:
+- ```python -m venv venv```
+- ```source ./venv/bin/activate```
 - in directory Book-and-Song-Search/app
 - run ```make install```
 - run ```make run```
