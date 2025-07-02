@@ -6,7 +6,6 @@ class Itunes(object):
     def __init__(self):
         super().__init__()
         self.initiate_calls = init_request.initiate_calls()
-        #hshshsg
 
     def song_search(self, term):
         self.term = term
